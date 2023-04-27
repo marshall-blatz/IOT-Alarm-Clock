@@ -44,7 +44,7 @@ client.on('message', (topic, message) => {
         console.log("Threshold: ", restingHr * 0.8)
         console.log()
         if(startTime && endTime && restingHr){
-            if(isTimeBetween(startTime, endTime) && heartRate <= restingHr*0.8) changeLightbulbState('on', 'white', 1);
+            if(isTimeBetween(startTime, endTime) && heartRate <= restingHr*0.8) changeLightbulbState('on', 'white', 10);
             if(isPastAlarm(endTime)){
                 console.log("play alarm")
                 client.publish("iowa-iot-project/alarm-trigger", "beep")
